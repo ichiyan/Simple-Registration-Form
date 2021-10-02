@@ -36,11 +36,22 @@
                 </div>
             </div>
         </nav>
-        <section class="ftco-section">
-            <main class="py-4">
-                @yield('content')
-            </main>
-        </section>
+        @guest
+            <section class="ftco-section">
+                <main class="py-4">
+                    @yield('content')
+                </main>
+            </section>
+        @else
+            <div class="container h-100">
+                <div class="row h-100 align-items-center justify-content-center text-center">
+                    <div class="col-lg-10 align-self-center">
+                        <h1 class="text-uppercase text-white font-weight-bold">Hi  {{ Auth::user()->name }} :')</h1>
+                        <h4 class="text-white font-weight-light mb-5">yada yada</h4>
+                    </div>
+                </div>
+            </div>
+        @endguest
 
     <script src='{{asset("js/jquery.min.js")}}'></script>
     <script src='{{asset("js/popper.js")}}'></script>
