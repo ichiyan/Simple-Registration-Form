@@ -54,7 +54,7 @@ A simple registration form that addresses at least three of the deadly sins in w
   - For the registration, user inputs are validated through the Validator class before creating a new user instance as shown in ``` app > Http > Controllers > Auth > RegisterController.php ```. 
  
 - Modularize code and never hard code queries (addresses **Sin #5**)
-  - Models, Views, and Controllers are separated. The models found in ``` app > Models ``` handles data-related logic, the views found in ``` app > resources > views ``` are used for all the UI logic, and the controllers in ``` app > Http > Controllers ``` are where all business logic, incoming requests, and queries are processed. The middleware in ``` app > Http > Middleware ``` inspects and filters HTTP requests entering the application. The ``` Authenticate.php ``` in the middleware verifies whether or not the user is authenticated. 
+  - Models, Views, and Controllers are separated. The models found in ``` app > Models ``` handles data-related logic, the views found in ``` resources > views ``` are used for all the UI logic, and the controllers in ``` app > Http > Controllers ``` are where all business logic, incoming requests, and queries are processed. The middleware in ``` app > Http > Middleware ``` inspects and filters HTTP requests entering the application. The ``` Authenticate.php ``` in the middleware verifies whether or not the user is authenticated. 
   
 - Use cookies with HttpOnly tag (addresses **Sin #3**)
   -   The remember me functionality generates a token in the users table and a cookie with a HttpOnly tag to prevent client-side scripts from accessing data. The cookie is also encrypted.
